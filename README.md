@@ -35,7 +35,7 @@ echo ". ~/.dotfiles/config/bash/bashrc" >> ~/.bashrc
 #!/bin/bash
 case $- in
   *i*) exec fish;;
-    *) return;;\
+    *) return;;
 esac
 ```
 

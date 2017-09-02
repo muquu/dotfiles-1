@@ -1,6 +1,6 @@
 [user]
-	name = Yoshiaki Kawazu
-	email = kawazzz@gmail.com
+	name = muquu
+	email = muquu@skytrum.com
 	useConfigOnly = true
 [color]
 	ui = auto
@@ -39,7 +39,7 @@
 	# --fixupとか--squashされたcommitがrebase -iの時に自動でsquashされるようにする
 	autosquash = true
 [github]
-	user = kawaz
+	user = muquu
 [tig "bind"]
 	generic = g move-first-line
 	generic = G move-last-line

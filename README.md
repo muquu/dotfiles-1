@@ -1,11 +1,9 @@
-kawaz'z dotfiles
-
 # SETUP
 とりあえず以下を実行しておけば大体環境が整う。
 
 ```bash
 # clone
-git clone https://github.com/kawaz/dotfiles.git ~/.dotfiles
+git clone https://github.com/muquu/dotfiles-fish.git ~/.dotfiles
 
 # ~/.bashrc に追記
 ## ローカルPCの場合はこっち
@@ -23,3 +21,27 @@ echo ". ~/.dotfiles/config/bash/bashrc-delay.sh" >> ~/.bashrc
 自分環境を有効化したい場合は手で `dotfiles-on` を実行すると bashrc の方の読込みが発動する。
 または、環境変数 `XMODIFIERS` に `@dotfiles=on` が含まれていると `bashrc-delay.sh` が読み込まれた直後に自動で `dotfiles-on` が実行される。
 リモートの共用サーバに自分のPCからログインした時は手で `dotfiles-on` をする必要を無くせるハックです。
+
+# fish
+fishを使う場合は
+
+```bash
+echo ". ~/.dotfiles/config/bash/bashrc" >> ~/.bashrc
+```
+
+``~/.dotfiles/config/bash/rc.local.after`` に ``exec-fish.sh`` を新規作成
+
+```bash
+#!/bin/bash
+case $- in
+  *i*) exec fish;;
+    *) return;;\
+esac
+```
+
+自動生成されるホスト名付きの設定ファイルをリポジトリから除外する
+
+```bash
+cd ~/.dotfiles
+echo "/config/fish/fishd.$HOSTNAME" >> .git/info/exclude
+```

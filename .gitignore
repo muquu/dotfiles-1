@@ -3,3 +3,6 @@
 /local
 /config/nvim/.init.vim-rplugin~
 /config/gocode/config.json
+/config/fish/fishfile
+/config/fish/functions/fisher.fish
+/config/fish/completions/fisher.fish

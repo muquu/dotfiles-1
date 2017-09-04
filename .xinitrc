@@ -33,7 +33,11 @@ export DefaultIMModule=fcitx
 #urxvt256c-mld -q -f -o &
 
 #systemctl --user import-environment
-#VBoxclient-all
+[ -x /usr/bin/VBoxClient-all ] && VBoxclient-all &
+
+[ -x /usr/bin/feh ] && sh ~/.fehbg &
+
+[ -x /usr/bin/fcitx-autostart ] && fcitx-autostart &
 
 # Start WM
 #exec startxfce4

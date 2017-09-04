@@ -6,3 +6,6 @@
 /config/fish/fishfile
 /config/fish/functions/fisher.fish
 /config/fish/completions/fisher.fish
+/config/gtk-3.0
+/config/libfm
+/config/pcmanfm

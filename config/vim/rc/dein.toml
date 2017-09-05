@@ -202,34 +202,34 @@ hook_add = '''
         \             [ 'ale' ] ]
         \ },
         \ 'component_function': {
-        " \   'filetype': 'MyFiletype',
-        " \   'fileformat': 'MyFileformat',
+        \   'filetype': 'MyFiletype',
+        \   'fileformat': 'MyFileformat',
         \   'fugitive': 'LightLineFugitive',
         \   'gitgutter': 'LightLineGitgutter',
         \   'readonly': 'LightLineReadonly',
         \   'modified': 'LightLineModified',
         \   'ale': 'LightLineALEStatus'
         \ },
-        " \ 'separator': { 'left': s:powerfont.left, 'right': s:powerfont.right },
-        " \ 'subseparator': { 'left': s:powerfont.leftsub, 'right': s:powerfont.rightsub }
-        \ 'separator': { 'left': "", 'right': "" },
-        \ 'subseparator': { 'left': "|", 'right': "|" }
+        \ 'separator': { 'left': s:powerfont.left, 'right': s:powerfont.right },
+        \ 'subseparator': { 'left': s:powerfont.leftsub, 'right': s:powerfont.rightsub }
+        " \ 'separator': { 'left': "", 'right': "" },
+        " \ 'subseparator': { 'left': "|", 'right': "|" }
         \ }
-  " " ファイルタイプアイコン
-  " function! MyFiletype()
-  "   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-  " endfunction
-  " " ファイルフォーマットアイコン
-  " function! MyFileformat()
-  "   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-  " endfunction
+  " ファイルタイプアイコン
+  function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  endfunction
+  " ファイルフォーマットアイコン
+  function! MyFileformat()
+    return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+  endfunction
   " gitブランチ表示
   function! LightLineFugitive()
     try
       if &ft !~? 'help\|vimfiler\|gundo' && exists("*fugitive#head")
         let _ = fugitive#head()
-        " return strlen(_) ? s:powerfont.branch .' '. _ : ''
-        return strlen(_) ? '' .' '. _ : ''
+        return strlen(_) ? s:powerfont.branch .' '. _ : ''
+        " return strlen(_) ? '' .' '. _ : ''
       endif
     catch
     endtry
@@ -258,8 +258,8 @@ hook_add = '''
   endfunction
   " 読込み専用マーク
   function! LightLineReadonly()
-    " return &ft =~ 'help\|vimfiler\|gundo' ? '' : &readonly ? s:powerfont.readonly : ''
-    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &readonly ? 'RO' : ''
+    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &readonly ? s:powerfont.readonly : ''
+    " return &ft =~ 'help\|vimfiler\|gundo' ? '' : &readonly ? 'RO' : ''
   endfunction
   " 編集マーク
   function! LightLineModified()

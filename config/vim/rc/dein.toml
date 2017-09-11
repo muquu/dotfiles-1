@@ -581,3 +581,7 @@ hook_source = '''
 [[plugins]]
 # ツリー状のundo履歴をブラウズする :GundoTree
 repo = 'sjl/gundo.vim'
+
+[[plugins]] # fish syntax
+repo = 'aliva/vim-fish'
+

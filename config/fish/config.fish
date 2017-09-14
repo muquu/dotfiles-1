@@ -6,5 +6,8 @@ function vi
 end
 
 function kc
-  keychain --eval --quiet $argv
+  if status --is-interactive
+    keychain --eval --quiet -Q $argv;
+    source ~/.keychain/(hostname)-fish
+  end
 end

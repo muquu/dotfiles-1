@@ -585,3 +585,5 @@ repo = 'sjl/gundo.vim'
 [[plugins]] # fish syntax
 repo = 'aliva/vim-fish'
 
+[[plugins]] # reStructuredText preview
+repo = 'kannokanno/previm'
